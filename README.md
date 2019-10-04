@@ -6,9 +6,11 @@ How to test:
  - launch the spring boot app using `mvn spring-boot:run` or from any IDE.
  - go to `http://localhost:8280` and login using username `tester`, and password `tester`
  - you will notice that you will get a too many redirect error on the browser because of an infinite number of `302` returned 
- - shutdown the spring-boot app and change the `keycloak.version` property to `4.0.0.Final`
+ - shutdown the spring-boot app and change the `keycloak.version` property to `4.0.0.Final` in the `pom.xm`.
  - relaunch the app again and go to  `http://localhost:8280`, you will notice that issue is gone. 
  
  This issue has been introduced in https://github.com/keycloak/keycloak/pull/5688/files
+ 
+ Here is the bug ticket created in Keycloak issue tracker: https://issues.jboss.org/browse/KEYCLOAK-11630
  
 
