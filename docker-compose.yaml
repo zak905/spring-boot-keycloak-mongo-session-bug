@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+  auth-server:
+    build: keycloak
+    command: [ "-Dkeycloak.migration.action=import", "-Dkeycloak.migration.provider=dir", "-Dkeycloak.migration.dir=/import", "-Dkeycloak.migration.strategy=OVERWRITE_EXISTING"]
+    ports:
+    - "8080:8080"
+    volumes:
+    - ./keycloak/data:/import
+  session-db:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: zakaria
+      MONGO_INITDB_ROOT_PASSWORD: zakaria
+    volumes:
+      - ./mongo:/docker-entrypoint-initdb.d/
+    ports:
+    - "27017:27017"
