@@ -13,4 +13,8 @@ How to test:
  
  Here is the bug ticket created in Keycloak issue tracker: https://issues.jboss.org/browse/KEYCLOAK-11630
  
+ # This was fixed starting from Keycloak 8.0.0
+ 
+ for the record here is the fix submitted  https://github.com/keycloak/keycloak/pull/6443/files
+ 
 
